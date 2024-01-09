@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>libroForm</title>
+</head>
+<body>
+    <form action="#" th:action="@{/aggiungi}" th:object="${libri}" method="post">
+        <h1>Aggiungi libro</h1>
+        <div>
+            <label>Inserisci il titolo</label>
+            <input type="text" th:field="*{titolo}" />
+            <span th:if="${#fields.hasErrors('titolo')}" >Titolo error</span>
+        </div>
+        <div>
+            <label>Inserisci l'autore</label>
+            <input type="text" th:field="*{autore}" />
+            <span th:if="${#fields.hasErrors('autore')}" >Autore error</span>
+        </div>
+        <div>
+            <label>Inserisci l'anno di pubblicazione</label>
+            <input type="number" th:field="*{annoPubblicazione}" />
+            <span th:if="${#fields.hasErrors('annoPubblicazione')}" >Pubblicazione error</span>
+        </div>
+        <div>
+            <label>Inserisci il prezzo</label>
+            <input type="number" th:field="*{prezzo}" />
+            <span th:if="${#fields.hasErrors('prezzo')}" >Prezzo error</span>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

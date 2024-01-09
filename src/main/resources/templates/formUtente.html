@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrazione</title>
+</head>
+<body>
+  <!-- quello che metti nell'action va nel postMapping quando fai il submit -->
+  <form action="#" th:action="@{/}" th:object="${user}" method="post">
+    <h1>Registrazione</h1>
+    <div>
+      <label>Inserisci il nome</label>
+      <input type="text" th:field="*{name}" />
+      <span th:if="${#fields.hasErrors('name')}" >Name error</span>
+    </div>
+    <div>
+      <label>Inserisci il cognome</label>
+      <input type="text" th:field="*{cognome}" />
+      <span th:if="${#fields.hasErrors('cognome')}" >Cognome error</span>
+    </div>
+    <div>
+      <label>Inserisci l'username</label>
+      <input type="text" th:field="*{username}" />
+      <span th:if="${#fields.hasErrors('username')}" >Username error</span>
+    </div>
+    <div>
+      <label>Inserisci la password</label>
+      <input type="text" th:field="*{password}" />
+      <span th:if="${#fields.hasErrors('password')}" >Password error</span>
+    </div>
+    <button type="sumbit">Submit</button>
+  </form>
+</body>
+</html>
