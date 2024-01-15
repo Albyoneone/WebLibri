@@ -63,6 +63,11 @@ public class LibroController {
         return "redirect:/risultato";
     }
 
+    @GetMapping("/risultato")
+    public String paginaRisultato(){
+        return"risultato";
+    }
+
     public static List<User> utenti = new ArrayList<>();
     public boolean controllaUser(User user){
         for(User u: utenti){
@@ -76,7 +81,4 @@ public class LibroController {
     }
 
     public static List<Libri> raccoltaLibri = new ArrayList<>();
-
-
-
 }
