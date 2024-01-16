@@ -1,5 +1,6 @@
 package com.example.WebLibri;
 
+import org.springframework.ui.Model;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -13,28 +14,28 @@ import java.util.List;
 @Controller
 public class LibroController {
 
-    @GetMapping("/")
+    @GetMapping("/registrazione")
     public String registraForm(User user){
         return "formUtente";
     }
 
-    @PostMapping("/")
+    @PostMapping("/registrazione")
     public String PostRegistraForm(@Valid User user, BindingResult binding){
         if (binding.hasErrors()){
             return"formUtente";
         }
         utenti.add(user);
-        return "redirect:/login";
+        return "redirect:/";
     }
 
     //Step successivo
 
-    @GetMapping("/login")
+    @GetMapping("/")
     public String login(User user){
         return "loginForm";
     }
 
-    @PostMapping("/login")
+    @PostMapping("/")
     public String postLogin(@Valid User user, BindingResult binding){
         if (binding.hasErrors()){
             return"loginForm";
@@ -68,7 +69,6 @@ public class LibroController {
         return"risultato";
     }
 
-    public static List<User> utenti = new ArrayList<>();
     public boolean controllaUser(User user){
         for(User u: utenti){
             if (user.getUsername().equals(u.getUsername())){
@@ -80,5 +80,13 @@ public class LibroController {
         return true;
     }
 
+    @GetMapping("/lista_libri")
+    public String listaDeiLibri(){
+        return"listaLibri";
+    }
+
+
+
+    public static List<User> utenti = new ArrayList<>();
     public static List<Libri> raccoltaLibri = new ArrayList<>();
 }

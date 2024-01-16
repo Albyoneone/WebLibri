@@ -8,17 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class User {
-
     @Size(min = 1, max = 30)
     String name;
     @Size(min = 1, max = 30)
     String cognome;
-    @NotNull
     @Size(min = 6, max = 30)
-     String username;
-    @NotNull
+    String username;
     @Size(min = 8, max = 16)
-     String password;
+    String password;
     Boolean check;
 
     public String getName() {
