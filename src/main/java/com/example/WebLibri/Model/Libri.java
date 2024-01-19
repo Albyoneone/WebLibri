@@ -32,6 +32,16 @@ public class Libri {
     @JoinColumn(name = "User_id")
     private User user;
 
+    public Libri(){}
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getTitolo() {
         return titolo;
     }
