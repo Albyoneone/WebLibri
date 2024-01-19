@@ -1,4 +1,4 @@
-package com.example.WebLibri;
+package com.example.WebLibri.Model;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;

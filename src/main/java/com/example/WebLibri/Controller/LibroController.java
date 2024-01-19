@@ -1,13 +1,13 @@
-package com.example.WebLibri;
+package com.example.WebLibri.Controller;
 
-import org.springframework.ui.Model;
+import com.example.WebLibri.Model.Libri;
+import com.example.WebLibri.Model.User;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import javax.naming.Binding;
 import java.util.ArrayList;
 import java.util.List;
 
