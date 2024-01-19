@@ -1,13 +1,16 @@
 package com.example.WebLibri.Model;
 
-import jakarta.validation.constraints.NotNull;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 
-import java.beans.Transient;
-import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    Long id;
     @Size(min = 1, max = 30)
     String name;
     @Size(min = 1, max = 30)
@@ -17,6 +20,19 @@ public class User {
     @Size(min = 8, max = 16)
     String password;
     Boolean check;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List <Libri> listaLibri;
+
+    public User(){}
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
